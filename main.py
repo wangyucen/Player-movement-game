@@ -4,6 +4,7 @@ l = ['--'] * (n ** 2)
 blocks = [5, 6, 7, 15, 16, 17, 20, 21, 29, 32, 33, 34, 35, 43, 44, 45]
 win = False
 dice = [1,2,3,4,5,6]
+directions =['2','4','6','8']
 dice_num = 0
 playerA_pos = 0
 playerB_pos = 0
@@ -58,10 +59,13 @@ tmp = 0
 while not win:
 
 #playerA
-    direction = str(input("You are the player A,Type a direction or press enter to skip \n"))
+    print("playerA turn:")
     print("rolling dice....")
     dice_num =random.choice(dice)
+    print("randomizing direction....")
+    direction = random.choice(directions)
     print("your dice number is :{}".format(dice_num))
+    print("your direction number is :{}".format(direction))
     tmp = playerA_pos
     playerA_pos = move(direction, dice_num,playerA_pos)
     if playerA_pos == tmp:
@@ -81,10 +85,13 @@ while not win:
         break
 #    print(l)
 #playerB
-    direction = str(input("You are the player B,Type a direction or press enter to skip \n"))
+    print("playerB turn:")
     print("rolling dice....")
     dice_num =random.choice(dice)
+    print("randomizing direction....")
+    direction = random.choice(directions)
     print("your dice number is :{}".format(dice_num))
+    print("your direction number is :{}".format(direction))
     tmp = playerB_pos
     playerB_pos=move(direction, dice_num,playerB_pos)
     if playerB_pos == tmp:
